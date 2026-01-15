@@ -1,65 +1,71 @@
-import Image from "next/image";
+import { LayersIcon, BotMessageSquareIcon, ChartPieIcon } from "lucide-react";
+
+import Hero from "@/components/sections/hero/hero";
+import SlidingCards from "@/components/sections/sliding-cards/slidingCards";
+import type { SlidingCardsFeatures } from "@/components/sections/sliding-cards/slidingCards";
+import AboutUs from "@/components/sections/about/aboutUs";
+import { Typewriter } from "@/components/sections/typewriter/typewriter";
+import BlogPreview from "@/components/sections/blog/blogPreview";
+import OpenPosition from "@/components/sections/jobs/openPosition";
+import SectionTitle from "@/components/ui/sectionTitle";
+import Testimonials from "@/components/sections/testimonials/testimonials";
 
 export default function Home() {
+
+  // Sliding Cards Section
+const features = [
+  {
+    icon: <ChartPieIcon />,
+    title: "Precision Profiling",
+    description:
+      "We move beyond standard job descriptions. Whether you need a high-level strategic leader or an agile tactical specialist, we outline the key qualifications, experience levels, and essential soft skills required. We prioritize cultural fit to ensure the candidate aligns seamlessly with your company values.",
+    media: {
+      type: "video",
+      src: "/videos/3205619-sd_960_540_25fps.mp4",
+    },
+  },
+  {
+    icon: <BotMessageSquareIcon />,
+    title: "Proactive Sourcing",
+    description:
+      "Top talent is not always looking at job boards. We utilize a sourcing-first approach, leveraging multiple channels to seek out passive candidates who are thriving in their fields. We personally engage these professionals, validating their skills before they ever reach your desk.",
+    media: {
+      type: "video",
+      src: "/videos/pitching.mp4",
+    },
+  },
+  {
+    icon: <LayersIcon />,
+    title: "Employer Branding Alignment",
+    description:
+      "Quality candidates research companies before applying. We help strengthen your position in the market by accurately representing your company culture, competitive benefits, and opportunities for professional growth, ensuring your organization attracts the highest caliber of talent.",
+    media: {
+      type: "video",
+      src: "/videos/team-editing.mp4",
+    },
+  },
+] satisfies SlidingCardsFeatures;
+
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Hero />
+      <div className="container mx-auto text-center max-w-7xl px-4 sm:px-6 lg:px-8 lg:py-24 ">
+        <SectionTitle text="Our Mission Statement" />
+        <Typewriter
+          text="To empower businesses by curating teams that drive growth, fostering long-term partnerships between exceptional talent and forward-thinking companies. At Latitude, we don't just fill positions; we secure the future of your organization."
+          speed={300}
+          cursor="_"
+          className="py-8 text-2xl font-semibold md:text-3xl lg:text-4xl "
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <SectionTitle text="" />
+      </div>
+      <AboutUs />
+      <SlidingCards featuresList={features} />
+      <OpenPosition />
+      <Testimonials />
+      <BlogPreview />
+    </>
   );
 }
+
