@@ -407,4 +407,4 @@ const BreadcrumbBlog = ({ breadcrumb }: BreadcrumbBlogProps) => {
   );
 };
 
-export { Blogpost6 };
+export default Blogpost6;

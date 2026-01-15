@@ -112,7 +112,7 @@ const Blogpost6 = ({ className }: Blogpost6Props) => {
 
   return (
     <section className={cn("pb-32", className)}>
-      <div className="bg-muted bg-[url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/patterns/dot-pattern-2.svg')] bg-[length:3.125rem_3.125rem] bg-repeat py-20">
+      <div className="bg-muted bg-[url('/images/Blog/finding-the-right-fit/basketball.jpg')] bg-[length:3.125rem_3.125rem] bg-repeat py-20">
         <div className="container flex flex-col items-start justify-start gap-16 py-20 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex w-full flex-col items-center justify-center gap-12">
             <div className="flex w-full max-w-[36rem] flex-col items-center justify-center gap-8">
@@ -226,13 +226,16 @@ const Blogpost6 = ({ className }: Blogpost6Props) => {
                 Show Off Your Team Colors
               </h2>
               <p>
-                Quality candidates research companies before applying. Strengthen
-                your brand and show why your team is worth joining by:
+                Quality candidates research companies before applying.
+                Strengthen your brand and show why your team is worth joining
+                by:
               </p>
               <ul>
                 <li>Sharing your culture on your website and social media</li>
                 <li>Highlighting employees and their stories</li>
-                <li>Offering competitive pay, benefits, and growth opportunities</li>
+                <li>
+                  Offering competitive pay, benefits, and growth opportunities
+                </li>
               </ul>
             </div>
 
@@ -314,4 +317,4 @@ const BreadcrumbBlog = ({ breadcrumb }: BreadcrumbBlogProps) => {
   );
 };
 
-export { Blogpost6 };
+export default Blogpost6;
