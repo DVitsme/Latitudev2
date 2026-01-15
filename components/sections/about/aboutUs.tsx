@@ -44,7 +44,7 @@ const AboutUs = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/about-us/image-4.png"
+                src="/images/team/team6.jpg"
                 alt="Team meeting office"
                 className="max-h-91 w-full rounded-lg object-cover"
               />
@@ -65,13 +65,12 @@ const AboutUs = () => {
                   <Image
                     width={1000}
                     height={1000}
-                    src="https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/about-us/image-3.png"
+                    src="/images/team/team9.jpg"
                     alt="Team collaboration"
                     className="h-52 w-full rounded-md object-cover"
                   />
                   <div className="absolute top-6 right-6 flex gap-4">
-                    <Badge>Tag blog</Badge>
-                    <Badge>Trends</Badge>
+                    <Badge>Loyalty</Badge>
                   </div>
                 </div>
               </MotionPreset>
@@ -86,13 +85,12 @@ const AboutUs = () => {
                   <Image
                     width={1000}
                     height={1000}
-                    src="https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/about-us/image-2.png"
+                    src="/images/team/team11.jpg"
                     alt="Team collaboration"
                     className="h-52 w-full rounded-md object-cover"
                   />
                   <div className="absolute top-6 right-6 flex gap-4">
-                    <Badge>Tag blog</Badge>
-                    <Badge>Trends</Badge>
+                    <Badge>Data Driven</Badge>
                   </div>
                 </div>
               </MotionPreset>

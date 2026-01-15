@@ -252,7 +252,7 @@ const SlidingCards = ({ featuresList }: { featuresList: SlidingCardsFeatures }) 
             slide={{ direction: "down" }}
             transition={{ duration: 0.5 }}
           >
-            Benefits
+            How we work
           </MotionPreset>
 
           <MotionPreset

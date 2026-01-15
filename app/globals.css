@@ -151,6 +151,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground font-sans;
     font-size: 18px;
@@ -206,5 +209,72 @@
   }
   .dark .shadow-soft {
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .prose-article {
+    /* Base prose improvements */
+    line-height: 1.8;
+    font-size: 1.125rem; /* 18px */
+    
+    /* Paragraph spacing */
+    & p {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      line-height: 1.8;
+    }
+    
+    /* Heading spacing and sizes */
+    & h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+    
+    & h2 {
+      font-size: 1.75rem; /* Smaller than current */
+      line-height: 1.3;
+      margin-top: 3em;
+      margin-bottom: 1em;
+    }
+    
+    & h3 {
+      font-size: 1.375rem;
+      line-height: 1.4;
+      margin-top: 2.5em;
+      margin-bottom: 0.75em;
+    }
+    
+    /* List spacing */
+    & ul, & ol {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+    
+    & li {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+    
+    /* Code blocks */
+    & pre {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+    
+    /* Blockquotes */
+    & blockquote {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      font-style: italic;
+      border-left-width: 4px;
+      padding-left: 1.5em;
+    }
+    
+    /* Images */
+    & img {
+      margin-top: 2.5em;
+      margin-bottom: 2.5em;
+    }
   }
 }

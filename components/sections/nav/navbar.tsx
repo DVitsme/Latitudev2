@@ -20,20 +20,16 @@ type NavigationItem = {
 const Navbar = () => {
   const navigationData: NavigationItem[] = [
     {
-      title: "Home",
-      href: "#home",
-    },
-    {
       title: "About",
-      href: "#about",
+      href: "/#about",
     },
     {
       title: "Postions",
-      href: "#positions",
+      href: "/jobs",
     },
     {
       title: "Blog",
-      href: "#blog",
+      href: "/blog",
     },
     {
       title: "Contact",
@@ -43,7 +39,7 @@ const Navbar = () => {
   return (
     <header className="bg-background sticky top-0 z-50">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-4 py-7 sm:px-6">
-        <Link href="#">
+        <Link href="/">
           <Image
             src="/images/logos/logo-light.png"
             alt="Logo"
@@ -62,7 +58,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           
-            <Link href="#" className="border-b-2 border-primary hover:border-secondary max-md:hidden">Get Started</Link>
+            <Link href="/getting-started" className="border-b-2 border-primary hover:border-secondary max-md:hidden">Get Started</Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="md:hidden" asChild>
               <Button variant="outline" size="icon">
@@ -78,14 +74,9 @@ const Navbar = () => {
                   </DropdownMenuItem>
                 ))}
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="!bg-transparent">
+                <DropdownMenuItem className="bg-transparent!">
                   <Button className="grow" asChild>
-                    <Link href="#">Login</Link>
-                  </Button>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="!bg-transparent">
-                  <Button className="grow" asChild>
-                    <Link href="#">Login</Link>
+                    <Link href="/getting-started">Get Started</Link>
                   </Button>
                 </DropdownMenuItem>
               </DropdownMenuGroup>

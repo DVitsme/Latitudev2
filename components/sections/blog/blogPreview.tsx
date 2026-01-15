@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -34,7 +35,7 @@ const BlogPreview = () => {
       title: "Finding the Right Fit for Your All-Star Team",
       description:
         "We have all watched NBA or NFL drafts, professional sports teams spend seasons pouring over eligible athletes, comparing their statistics, and watching their form",
-      blogLink: "#",
+      blogLink: "/blog/find-right-team",
     },
     {
       img: "/images/Blog/talent-pool/talent-pool.jpg",
@@ -43,7 +44,7 @@ const BlogPreview = () => {
         "The Hidden Talent Pool: Why Passive Candidates Are Your Best Hires",
       description:
         "In a competitive job market, most companies make the mistake of relying solely on inbound applications.",
-      blogLink: "#",
+      blogLink: "/blog/hidden-talent",
     },
     {
       img: "/images/Blog/beyond-the-resume/resume.jpg",
@@ -51,7 +52,7 @@ const BlogPreview = () => {
       title: "Beyond the Resume: Decoding Organizational DNA",
       description:
         "A resume can tell you what a candidate has done, but it cannot tell you how they will behave when deadlines are tight or how they will collaborate with your existing team.",
-      blogLink: "#",
+      blogLink: "/blog/beyond-the-resume",
     },
   ];
 
@@ -105,10 +106,10 @@ const BlogPreview = () => {
               size="lg"
               asChild
             >
-              <a href="#">
+              <Link href="/blog">
                 View All Blogs
                 <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </Button>
           </MotionPreset>
         </div>
@@ -123,7 +124,7 @@ const BlogPreview = () => {
               delay={0.8 + index * 0.1}
               transition={{ duration: 0.5 }}
             >
-              <a href={item.blogLink}>
+              <Link href={item.blogLink}>
                 <Card className="group gap-4 overflow-hidden border-0 bg-transparent py-0 shadow-none transition-transform duration-300 hover:-translate-y-1">
                   <CardContent className="px-0">
                     <div className="relative">
@@ -154,7 +155,7 @@ const BlogPreview = () => {
                     </CardDescription>
                   </CardHeader>
                 </Card>
-              </a>
+              </Link>
             </MotionPreset>
           ))}
         </div>

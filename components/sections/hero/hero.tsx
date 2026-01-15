@@ -157,7 +157,7 @@ const Hero = ({ className }: HeroProps) => {
     },
   ];
   return (
-    <section id="home" className={cn("py-20", className)}>
+    <section id="home" className={cn("my-20", className)}>
       <div className="mx-auto flex flex-col items-center justify-center gap-4 text-center">
         <Button
           variant="secondary"

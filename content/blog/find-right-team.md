@@ -1,3 +1,18 @@
+---
+title: "Finding the Right Fit for Your All-Star Team"
+category: "Company Culture"
+author: "Latitude Recruiting Team"
+date: "2025-12-19"
+excerpt: "We have all watched NBA or NFL drafts, professional sports teams spend seasons pouring over eligible athletes, comparing their statistics, and watching their form."
+image: "/images/Blog/finding-the-right-fit/basketball.jpg"
+tags:
+  - Hiring
+  - Culture
+  - Recruitment
+readingTime: "6 min read"
+updatedDate: "2025-12-19"
+---
+
 **Finding the Right Fit for Your All-Star Team**
 
 We’ve all watched NBA or NFL drafts, professional sports teams spend seasons pouring over eligible athletes, comparing their statistics, and watching their form. They meet with the athletes, get a sense of their personality, their work ethic, what drives them. Then comes the big day, Draft Day, and the coaches and managers are confident that they have found the right player that will fit seamlessly on to the team. Hiring for your business is no different\!
