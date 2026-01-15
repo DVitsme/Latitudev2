@@ -1,190 +1,123 @@
-"use client";
-
-import React, { useState } from "react";
+import { ArrowUpRightIcon } from "lucide-react";
+import React from "react";
 
 import { cn } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-const data = [
-  {
-    id: 1,
-    title: "Getting Started with Modern Web Development: A Complete Guide",
-    description:
-      "Dive into the fundamentals of modern web development. Learn about essential tools, frameworks, and best practices that will help you build robust and scalable web applications in today's fast-paced development environment.",
-    author: "Sarah Chen",
-    date: "March 15, 2024",
-    category: "Web Development",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "The Ultimate Guide to State Management in Frontend Applications",
-    description:
-      "Explore different approaches to managing state in frontend applications. From local state to global solutions, learn how to choose the right strategy for your project's specific needs and complexity.",
-    author: "James Wilson",
-    date: "March 12, 2024",
-    category: "Frontend",
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Building Scalable Backend Systems: Best Practices and Patterns",
-    description:
-      "Learn how to design and implement backend systems that can grow with your application. Discover architectural patterns, optimization techniques, and infrastructure considerations for modern backend development.",
-    author: "Michael Rodriguez",
-    date: "March 8, 2024",
-    category: "Backend",
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Mastering Component Architecture in Frontend Development",
-    description:
-      "Deep dive into building maintainable and reusable components. Learn about component design patterns, state management, and best practices for creating scalable frontend architectures.",
-    author: "Emily Zhang",
-    date: "March 5, 2024",
-    category: "Frontend",
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Optimizing Application Performance: From Theory to Practice",
-    description:
-      "Discover practical techniques for improving your application's performance. From code-level optimizations to infrastructure tuning, learn how to deliver a faster and more efficient user experience.",
-    author: "David Park",
-    date: "March 3, 2024",
-    category: "Web Development",
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Security Best Practices for Backend Development",
-    description:
-      "Explore essential security concepts and implementation strategies for protecting your backend systems. Learn about common vulnerabilities, authentication methods, and data protection techniques.",
-    author: "Lisa Thompson",
-    date: "February 28, 2024",
-    category: "Backend",
-    link: "#",
-  },
-  {
-    id: 7,
-    title: "Modern Frontend Testing Strategies",
-    description:
-      "Learn comprehensive testing approaches for frontend applications. From unit testing components to end-to-end testing, discover how to ensure your frontend code is reliable and maintainable.",
-    author: "Alex Kumar",
-    date: "February 25, 2024",
-    category: "Frontend",
-    link: "#",
-  },
-  {
-    id: 8,
-    title: "Database Design and Optimization for Backend Systems",
-    description:
-      "Master the fundamentals of database design and optimization for backend applications. Learn about schema design, indexing strategies, and query optimization techniques.",
-    author: "Rachel Martinez",
-    date: "February 22, 2024",
-    category: "Backend",
-    link: "#",
-  },
-  {
-    id: 9,
-    title: "Building Responsive Web Interfaces",
-    description:
-      "Master the art of creating responsive and adaptive web interfaces. Learn about modern CSS techniques, mobile-first design, and performance optimization strategies.",
-    author: "Chris Anderson",
-    date: "February 19, 2024",
-    category: "Web Development",
-    link: "#",
-  },
-  {
-    id: 10,
-    title: "API Design and Integration Patterns",
-    description:
-      "Explore best practices for designing and integrating APIs in your applications. Learn about RESTful principles, authentication strategies, and error handling patterns.",
-    author: "Nina Patel",
-    date: "February 15, 2024",
-    category: "Backend",
-    link: "#",
-  },
-];
-
-interface Blog17Props {
+interface JobsProps {
   className?: string;
 }
 
-const Blog17 = ({ className }: Blog17Props) => {
-  const [selectedCategory, setSelectedCategory] = useState("All Articles");
-
-  const categories = [
-    "All Articles",
-    ...Array.from(new Set(data.map((item) => item.category))),
+const Jobs = ({ className }: JobsProps) => {
+  const jobsPosts = [
+    {
+      href: "#",
+      date: "March 15, 2024",
+      title: "Building a Design System with Shadcn UI",
+      content:
+        "Learn how to create a scalable design system using Shadcn UI components. We'll explore component composition, theming, and best practices for maintaining consistency across your application. Discover how to leverage the power of Radix UI primitives while keeping your codebase clean and maintainable.",
+      tags: [
+        "Design Systems",
+        "Shadcn UI",
+        "React",
+        "Tailwind CSS",
+        "UI Development",
+      ],
+    },
+    {
+      href: "#",
+      date: "March 10, 2024",
+      title: "The Rise of Headless UI Components",
+      content:
+        "Explore the benefits of headless UI components and how they're revolutionizing web development. We'll compare popular headless libraries, discuss accessibility considerations, and show how to build flexible, unstyled components that can be customized to match any design system.",
+      tags: [
+        "Headless UI",
+        "Accessibility",
+        "Component Architecture",
+        "React",
+        "Web Development",
+      ],
+    },
+    {
+      href: "#",
+      date: "March 5, 2024",
+      title: "Optimizing Component Libraries for Performance",
+      content:
+        "Discover techniques for building performant component libraries that scale. From code splitting and tree shaking to optimizing bundle size and implementing lazy loading, learn how to ensure your UI components deliver a smooth user experience without compromising on functionality.",
+      tags: [
+        "Performance",
+        "Bundle Size",
+        "Code Splitting",
+        "React",
+        "Web Performance",
+      ],
+    },
   ];
 
-  const filteredData =
-    selectedCategory === "All Articles"
-      ? data
-      : data.filter((item) => item.category === selectedCategory);
-
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("bg-background py-16", className)}>
       <div className="container">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <Badge variant="secondary">Blog</Badge>
-          <h1 className="text-4xl font-bold lg:text-7xl">
-            Latest Insights & Updates
-          </h1>
-          <p className="text-balance lg:text-xl">
-            Stay up to date with the latest trends, tutorials, and best
-            practices in software development. Our experts share their knowledge
-            to help you build better applications.
-          </p>
-        </div>
-        <div className="mx-auto mt-20 grid max-w-7xl grid-cols-1 gap-20 lg:grid-cols-4">
-          <div className="hidden flex-col gap-2 lg:flex">
-            {categories.map((category) => (
-              <Button
-                variant="ghost"
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={cn(
-                  "justify-start text-left",
-                  selectedCategory === category &&
-                    "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                )}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-          <div className="lg:col-span-3">
-            {filteredData.map((item) => (
-              <React.Fragment key={item.id}>
-                <a href={item.link} className="flex flex-col gap-3">
-                  <p className="text-sm font-semibold text-muted-foreground">
-                    {item.category}
-                  </p>
-                  <h3 className="text-2xl font-semibold text-balance lg:text-3xl">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                  <div className="mt-3 flex items-center gap-2 text-sm">
-                    <span className="font-medium">{item.author}</span>
-                    <span className="text-muted-foreground">
-                      on {item.date}
-                    </span>
+        <h1 className="mb-10 px-6 text-left text-4xl font-bold tracking-tighter text-foreground sm:text-6xl">
+          Jobs
+        </h1>
+
+        <section className="mt-10 space-y-6 md:mt-18">
+          {jobsPosts.map((post, index) => (
+            <React.Fragment key={index}>
+              <Card className="border-none shadow-none">
+                <CardContent className="">
+                  <div className="relative w-full">
+                    <p className="text-sm tracking-tight text-muted-foreground">
+                      {post.date}
+                    </p>
+
+                    <h2 className="mt-2 text-lg font-medium tracking-tight text-foreground md:text-2xl">
+                      {post.title}
+                    </h2>
+
+                    <p className="md:text-md mt-4 text-sm text-muted-foreground md:pr-24 xl:pr-32">
+                      {post.content}
+                    </p>
+
+                    <div className="mt-4 flex w-9/10 flex-wrap items-center gap-2">
+                      {post.tags.map((tag, tagIndex) => (
+                        <Badge
+                          key={tagIndex}
+                          variant="secondary"
+                          className="h-6 rounded-md"
+                        >
+                          <span className="text-md font-medium text-muted-foreground">
+                            {tag}
+                          </span>
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <a href={post.href}>
+                      <Button
+                        variant="secondary"
+                        className="absolute -right-3 -bottom-1 flex h-10 w-10 items-center justify-center rounded-full transition-all ease-in-out hover:rotate-45 md:bottom-14"
+                      >
+                        <ArrowUpRightIcon />
+                      </Button>
+                    </a>
                   </div>
-                </a>
-                <Separator className="my-8" />
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
+                </CardContent>
+              </Card>
+
+              {index < jobsPosts.length - 1 && (
+                <Separator className="h-px w-full" />
+              )}
+            </React.Fragment>
+          ))}
+        </section>
       </div>
     </section>
   );
 };
 
-export { Blog17 };
+export { Jobs };
